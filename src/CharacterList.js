@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './Character.css';
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([]);
@@ -31,42 +32,45 @@ const CharacterList = () => {
 
     return (
         <div>
-            <h1>Lista de Personagens</h1>
+            <h1 className='lista-personagens'>Lista de Personagens</h1>
             <div>
                 <input
                     type="text"
                     placeholder="Buscar personagem"
                     value={searchTerm}
                     onChange={e => setSearchTerm(e.target.value)}
+                    className='input'
                 />
-                <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+                <select value={statusFilter} onChange={e => setStatusFilter(e.target.value)} className='select'>
                     <option value="">Todos os Status</option>
                     <option value="Alive">Vivo</option>
                     <option value="Dead">Morto</option>
                     <option value="unknown">Desconhecido</option>
                 </select>
-                <select value={speciesFilter} onChange={e => setSpeciesFilter(e.target.value)}>
+                <select value={speciesFilter} onChange={e => setSpeciesFilter(e.target.value)} className='select'>
                     <option value="">Todas as Espécies</option>
                     <option value="Human">Humano</option>
                     <option value="Alien">Alienígena</option>
                 </select>
-                <select value={genderFilter} onChange={e => setGenderFilter(e.target.value)}>
+                <select value={genderFilter} onChange={e => setGenderFilter(e.target.value)} className='select'>
                     <option value="">Todos os Gêneros</option>
                     <option value="Male">Homem</option>
                     <option value="Female">Mulher</option>
                 </select>
             </div>
-            <ul>
+            <ul className='character-list'>
                 {filteredCharacters.map(character => (
-                    <li key={character.id}>
+                    <li key={character.id} className='character-item'>
                         <Link to={`/character/${character.id}`} className="character-link">
-                            <img src={character.image} alt={character.name} width="50" height="50" />
-                            <div>
-                                <h2>{character.name}</h2>
-                                <p>Status: {character.status}</p>
-                                <p>Espécie: {character.species}</p>
-                                <p>Gênero: {character.gender}</p>
-                                <p>Localidade: {character.location.name}</p>
+                            <div className='character-info'>
+                                <img src={character.image} alt={character.name} width="50" height="50" className='character-image'/>
+                                <div>
+                                    <h2>{character.name}</h2>
+                                    <p>Status: {character.status}</p>
+                                    <p>Espécie: {character.species}</p>
+                                    <p>Gênero: {character.gender}</p>
+                                    <p>Localidade: {character.location.name}</p>
+                                </div>
                             </div>
                         </Link>
                     </li>

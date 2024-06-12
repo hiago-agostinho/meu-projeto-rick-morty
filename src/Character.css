@@ -1,0 +1,81 @@
+.lista-personagens {
+    color: white;
+}
+
+.input {
+    padding: 10px;
+    font-size: 20px;
+    border-width: 1px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+    text-shadow: 0px 0px 5px rgba(255,255,255,.0);
+}
+
+.input:hover,
+.input:focus {
+    outline: none;
+    background: #eefde9;
+}
+
+.select {
+    margin-bottom: 15px;
+}
+.select select::-ms-expand {
+    display: none;
+}
+.select:hover,
+.select:focus {
+    color: #000000;
+    background: #eefde9;
+}
+
+.character-list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.character-list li {
+    background-color: rgb(0, 214, 46);
+    /* border-width: 1px; */
+
+    width: 400px;
+}
+
+.character-item {
+    list-style: none;
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+
+.character-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.character-info {
+    display: flex;
+    align-items: center;
+}
+
+.character-image {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.character-info div {
+    flex: 1;
+}
+
+.character-info h2 {
+    margin-top: 0;
+}
+
+.character-info p {
+    margin: 5px 0;
+    color: black;
+}
