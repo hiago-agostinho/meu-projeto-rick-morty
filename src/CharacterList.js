@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const CharacterList = () => {
     const [characters, setCharacters] = useState([]);
@@ -58,14 +59,16 @@ const CharacterList = () => {
             <ul>
                 {filteredCharacters.map(character => (
                     <li key={character.id}>
-                        <img src={character.image} alt={character.name} width="50" height="50" />
-                        <div>
-                            <h2>{character.name}</h2>
-                            <p>Status: {character.status}</p>
-                            <p>Espécie: {character.species}</p>
-                            <p>Gênero: {character.gender}</p>
-                            <p>Localidade: {character.location.name}</p>
-                        </div>
+                        <Link to={`/character/${character.id}`} className="character-link">
+                            <img src={character.image} alt={character.name} width="50" height="50" />
+                            <div>
+                                <h2>{character.name}</h2>
+                                <p>Status: {character.status}</p>
+                                <p>Espécie: {character.species}</p>
+                                <p>Gênero: {character.gender}</p>
+                                <p>Localidade: {character.location.name}</p>
+                            </div>
+                        </Link>
                     </li>
                 ))}
             </ul>
