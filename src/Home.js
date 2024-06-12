@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
@@ -17,7 +18,7 @@ const Home = () => {
             <h2 className='slogan2'>um só <span className='highlight'>lugar.</span></h2>
             <p className='wubba'>Wubba Lubba Dub Dub!</p>
             <div className="home">
-                <button onClick={goToCharacterList}>Ver Personagens</button>
+                <button><Link to="/categories" className="home-button">Ver Categorias</Link></button>
             </div>
         </div>
     );

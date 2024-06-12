@@ -1,0 +1,32 @@
+/* .categories {
+    text-align: center;
+    margin-top: 50px;
+} */
+
+/* .category-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+} */
+
+/* .category-link {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+/* .category-link img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+} */
+
+/* .category-link p {
+    margin-top: 10px;
+    font-size: 1.2em;
+} */

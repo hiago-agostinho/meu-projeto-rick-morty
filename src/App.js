@@ -4,6 +4,7 @@ import './App.css';
 import Home from './Home';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
+import Categories from './Categories';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/categories" element={<Categories />} />
           <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
         </Routes>
