@@ -8,8 +8,8 @@ const Categories = () => {
             <div className="category-top">
                 <Link to="/characters" className="category-link">
                     <div className="image-container">
-                        <img src="/ceia.png" alt="Personagens" className="horizontal-img"/>
-                        <p className="image-title">Personagens</p>
+                        <img src="/personagens.jpg" alt="Personagens" className="horizontal-img"/>
+                        <p className="image-title title-bottom">Personagens</p>
                     </div>
                 </Link>
             </div>
@@ -17,13 +17,13 @@ const Categories = () => {
                 <Link to="/episodes" className="category-link">
                     <div className="image-container">
                         <img src="/episodios.jpg" alt="Episódios" />
-                        <p className="image-title">Episódios</p>
+                        <p className="image-title title-bottom">Episódios</p>
                     </div>
                 </Link>
                 <Link to="/locations" className="category-link">
                     <div className="image-container">
                         <img src="/locais.jpg" alt="Locais" className='locais'/>
-                        <p className="image-title">Locais</p>
+                        <p className="image-title title-bottom">Locais</p>
                     </div>
                 </Link>
             </div>

@@ -24,6 +24,7 @@ html, body {
 .category-top {
     width: 100%;
     height: 50vh;
+    position: relative;
 }
 
 .category-bottom {
@@ -43,6 +44,9 @@ html, body {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .image-container img {
@@ -56,17 +60,32 @@ html, body {
 .image-title {
     position: absolute;
     bottom: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     width: 100%;
     text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    font-size: 24px;
+
     color: white;
+    text-shadow: -1px -1px 0 #000,  
+                  1px -1px 0 #000,
+                 -1px  1px 0 #000,
+                  1px  1px 0 #000; 
+
     margin: 0;
-    padding: 10px 0;
+    padding: 10px 20px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .image-container:hover img {
     transform: scale(1.1);
     filter: grayscale(0%);
+}
+
+.title-bottom {
+    margin-top: 15px;
 }
