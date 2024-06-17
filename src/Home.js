@@ -18,7 +18,7 @@ const Home = () => {
             <h2 className='slogan2'>um só <span className='highlight'>lugar.</span></h2>
             <p className='wubba'>Wubba Lubba Dub Dub!</p>
             <div className="home">
-                <button><Link to="/categories" className="home-button">Ver Categorias</Link></button>
+                <button><Link to="/categories" className="home-button">Ver Informações</Link></button>
             </div>
         </div>
     );

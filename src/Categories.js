@@ -5,18 +5,26 @@ import './Categories.css';
 const Categories = () => {
     return (
         <div className="categories">
-            <div className="category-links">
+            <div className="category-top">
                 <Link to="/characters" className="category-link">
-                    <img src="/personagens.jpg" alt="Personagens" />
-                    <p>Personagens</p>
+                    <div className="image-container">
+                        <img src="/personagens2.jpg" alt="Personagens" className="horizontal-img"/>
+                        <p className="image-title">Personagens</p>
+                    </div>
                 </Link>
+            </div>
+            <div className="category-bottom">
                 <Link to="/episodes" className="category-link">
-                    <img src="/episodios.jpg" alt="Episódios" />
-                    <p>Episódios</p>
+                    <div className="image-container">
+                        <img src="/episodios.jpg" alt="Episódios" />
+                        <p className="image-title">Episódios</p>
+                    </div>
                 </Link>
                 <Link to="/locations" className="category-link">
-                    <img src="/locations.jpg" alt="Locais" />
-                    <p>Locais</p>
+                    <div className="image-container">
+                        <img src="/locations.jpg" alt="Locais" />
+                        <p className="image-title">Locais</p>
+                    </div>
                 </Link>
             </div>
         </div>
