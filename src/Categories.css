@@ -18,64 +18,54 @@ html, body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    max-height: 100vh !important;
     position: relative;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-.category-top, .category-bottom {
-    display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
-    flex: 1;
 }
 
 .category-top {
+    width: 100%;
     height: 50vh;
 }
 
 .category-bottom {
+    display: flex;
+    width: 100%;
     height: 50vh;
-    position: relative;
 }
 
 .category-link {
     flex: 1;
-    margin: 0;
-    padding: 0;
-    border: none;
+    position: relative;
+    overflow: hidden;
 }
 
 .image-container {
     position: relative;
     width: 100%;
     height: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
+    overflow: hidden;
 }
 
-.horizontal-img, .image-container img {
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: none;
-    margin: 0;
-    padding: 0;
+    transition: transform 0.5s ease;
 }
 
 .image-title {
     position: absolute;
     bottom: 0;
+    left: 0;
     width: 100%;
     text-align: center;
     color: white;
     margin: 0;
     padding: 10px 0;
     box-sizing: border-box;
-    border: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.image-container:hover img,
+.image-container:hover .image-title {
+    transform: scale(1.3);
 }
