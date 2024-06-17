@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Categories.css';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const Categories = () => {
     return (
@@ -27,7 +28,14 @@ const Categories = () => {
                     </div>
                 </Link>
             </div>
-            <img src='/logo2.png' className='logo'></img>
+            <img src='/logo2.png' className='logo-menu' alt="logo2"></img>
+            <div className="home">
+                <button className="home-button">
+                    <Link to="/" className="home-link">
+                        <FaArrowLeft /> Voltar
+                    </Link>
+                </button>
+            </div>
         </div>
     );
 };

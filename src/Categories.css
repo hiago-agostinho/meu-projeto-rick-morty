@@ -89,8 +89,20 @@ html, body {
     margin-top: 15px;
 }
 
-.logo {
+.logo-menu {
+    position: absolute;
     width: 25%;
     left: 38%;
     top: 40%;
+}
+
+.home-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.home-link svg {
+    margin-right: 8px; 
 }
