@@ -27,6 +27,7 @@ const Categories = () => {
                     </div>
                 </Link>
             </div>
+            <img src='/logo2.png' className='logo'></img>
         </div>
     );
 };

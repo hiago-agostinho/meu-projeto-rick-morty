@@ -89,3 +89,9 @@ html, body {
 .title-bottom {
     margin-top: 15px;
 }
+
+.logo {
+    width: 35%;
+    left: 35%;
+    top: 37%;
+}
