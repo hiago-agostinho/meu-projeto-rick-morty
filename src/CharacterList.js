@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { RiAliensLine } from "react-icons/ri";
+import { IoMdPlanet } from "react-icons/io";
+import { IoIosPulse } from "react-icons/io";
 import './Character.css';
 
 const CharacterList = () => {
@@ -67,10 +70,10 @@ const CharacterList = () => {
                             <div className='character-info'>
                                 <div>
                                     <h2>{character.name}</h2>
-                                    <p>Status: {character.status}</p>
-                                    <p>Espécie: {character.species}</p>
-                                    <p>Gênero: {character.gender}</p>
-                                    <p>Localidade: {character.location.name}</p>
+                                    <p><IoIosPulse className='character-icons'/> {character.status}</p>
+                                    <p><RiAliensLine className='character-icons'/> {character.species}</p>
+                                    {/* <p>Gênero: {character.gender}</p> */}
+                                    <p><IoMdPlanet className='character-icons'/> {character.location.name}</p>
                                 </div>
                             </div>
                         </Link>

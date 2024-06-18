@@ -107,3 +107,12 @@ input.input {
     margin: 10px 0;
     color: #fff;
 }
+
+.character-icons {
+    color: #11B0C8;
+    transition: color 0.2s ease;
+}
+
+.character-item:hover .character-icons {
+    color: #fff;
+}
