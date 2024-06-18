@@ -47,6 +47,14 @@ input.input {
     outline: 1px solid #11B0C8;
 }
 
+.character-item {
+    border-radius: 10px;
+}
+
+.character-item:hover {
+    background-color: #11B0C8;
+}
+
 .character-list {
     list-style-type: none;
     display: flex;
@@ -57,36 +65,42 @@ input.input {
 
 .character-list li {
     background-color: #3b3b3e;
-    width: 400px;
+    width: 350px;
     border: none;
-}
-
-.character-item {
-    list-style: none;
     margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .character-link {
     text-decoration: none;
     color: inherit;
-    transition: color 0.2s ease;
-}
-
-.character-item:hover {
-    background-color: #11B0C8;
-}
-
-.character-info {
-    display: flex;
-    align-items: center;
 }
 
 .character-image {
-    width: 150px;
-    height: auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-left: 20px;
 }
 
-.character-info p h2 {
+.character-info {
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.character-info p {
     margin: 5px 0;
+    color: #fff;
+}
+
+.character-info h2 {
+    margin: 10px 0;
     color: #fff;
 }

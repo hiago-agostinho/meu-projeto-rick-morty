@@ -63,8 +63,8 @@ const CharacterList = () => {
                 {filteredCharacters.map(character => (
                     <li key={character.id} className='character-item'>
                         <Link to={`/character/${character.id}`} className="character-link">
+                            <img src={character.image} alt={character.name} width="50" height="50" className='character-image'/>
                             <div className='character-info'>
-                                <img src={character.image} alt={character.name} width="50" height="50" className='character-image'/>
                                 <div>
                                     <h2>{character.name}</h2>
                                     <p>Status: {character.status}</p>
