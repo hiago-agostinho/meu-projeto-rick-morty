@@ -18,10 +18,8 @@ ul {
 li {
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #ddd;
   border-radius: 5px;
 }
 
@@ -67,12 +65,4 @@ button:disabled {
 .character-link {
   text-decoration: none;
   color: inherit;
-}
-
-.character-link div h2 {
-  color: black;
-}
-
-.character-link:hover {
-  background-color: #f0f0f0; /* Adiciona um leve destaque ao passar o mouse */
 }

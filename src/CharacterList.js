@@ -31,9 +31,9 @@ const CharacterList = () => {
     );
 
     return (
-        <div>
-            <h1 className='lista-personagens'>Lista de Personagens</h1>
-            <div>
+        <div className='body'>
+            <div className='personagem'>
+                <h1 className='lista-personagens'>Lista de Personagens</h1>
                 <input
                     type="text"
                     placeholder="Buscar personagem"
@@ -58,6 +58,7 @@ const CharacterList = () => {
                     <option value="Female">Mulher</option>
                 </select>
             </div>
+            <hr className='linha'></hr>
             <ul className='character-list'>
                 {filteredCharacters.map(character => (
                     <li key={character.id} className='character-item'>
