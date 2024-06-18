@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { RiAliensLine } from "react-icons/ri";
 import { IoMdPlanet } from "react-icons/io";
 import { IoIosPulse } from "react-icons/io";
+import { IoMdInformationCircleOutline } from "react-icons/io";
 import './Character.css';
 
 const CharacterList = () => {
@@ -65,18 +66,20 @@ const CharacterList = () => {
             <ul className='character-list'>
                 {filteredCharacters.map(character => (
                     <li key={character.id} className='character-item'>
-                        <Link to={`/character/${character.id}`} className="character-link">
-                            <img src={character.image} alt={character.name} width="50" height="50" className='character-image'/>
-                            <div className='character-info'>
-                                <div>
-                                    <h2>{character.name}</h2>
-                                    <p><IoIosPulse className='character-icons'/> {character.status}</p>
-                                    <p><RiAliensLine className='character-icons'/> {character.species}</p>
-                                    {/* <p>Gênero: {character.gender}</p> */}
-                                    <p><IoMdPlanet className='character-icons'/> {character.location.name}</p>
-                                </div>
+                        <img src={character.image} alt={character.name} width="50" height="50" className='character-image'/>
+                        <div className='character-info'>
+                            <div>
+                                <h2>{character.name}</h2>
+                                <p><IoIosPulse className='character-icons'/> {character.status}</p>
+                                <p><RiAliensLine className='character-icons'/> {character.species}</p>
+                                <p><IoMdPlanet className='character-icons'/> {character.location.name}</p>
                             </div>
-                        </Link>
+                        </div>
+                        <button className='more-info'>
+                            <Link to={`/character/${character.id}`} className="character-link">
+                                <IoMdInformationCircleOutline /> Saiba Mais
+                            </Link>
+                        </button>
                     </li>
                 ))}
             </ul>

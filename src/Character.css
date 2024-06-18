@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
 .body {
     background-color: #1E1E20;
     padding: 50px;
@@ -51,6 +57,7 @@ input.input {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.5s ease;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
 }
 
 .character-item:hover {
@@ -78,11 +85,6 @@ input.input {
     align-items: center;
 }
 
-.character-link {
-    text-decoration: none;
-    color: inherit;
-}
-
 .character-image {
     width: 300px;
     height: 200px;
@@ -93,9 +95,10 @@ input.input {
 }
 
 .character-info {
+    width: 100%;
     text-align: center;
     margin-top: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .character-info p {
@@ -113,6 +116,39 @@ input.input {
     transition: color 0.2s ease;
 }
 
+.more-info {
+    font-size: 15px;
+    font-weight: 500;
+    
+    border-radius:20px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:10px;
+    padding-bottom:10px;
+
+    margin-left: 180px;
+    align-items: center;
+    text-wrap: nowrap;
+    
+    color:#fff;
+    background-color:#11B0C8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    border:none;
+    cursor:pointer;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.more-info svg {
+    vertical-align: middle;
+}
+
 .character-item:hover .character-icons {
     color: #fff;
+}
+
+.character-item:hover .more-info {
+    background-color: #fff;
+    color: #11B0C8;
 }
