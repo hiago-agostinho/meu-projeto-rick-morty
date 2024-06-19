@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { RiAliensLine } from "react-icons/ri";
 import { IoMdPlanet } from "react-icons/io";
 import { IoIosPulse } from "react-icons/io";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { BsGenderAmbiguous } from "react-icons/bs";
 import './Character.css';
 
 const CharacterList = () => {
@@ -15,6 +15,10 @@ const CharacterList = () => {
     const [genderFilter, setGenderFilter] = useState('');
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [showModal, setShowModal] = useState(false);
+    const [selectedCharacter, setSelectedCharacter] = useState(null);
+    const [closingModal, setClosingModal] = useState(false);
+    const [episodeCount, setEpisodeCount] = useState(0);
 
     useEffect(() => {
         axios.get(`https://rickandmortyapi.com/api/character?page=${page}`)
@@ -33,6 +37,22 @@ const CharacterList = () => {
         (speciesFilter === '' || character.species === speciesFilter) &&
         (genderFilter === '' || character.gender === genderFilter)
     );
+
+    const openModal = (character) => {
+        setSelectedCharacter(character);
+        setEpisodeCount(character.episode.length);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setClosingModal(true);
+        setTimeout(() => {
+            setShowModal(false);
+            setSelectedCharacter(null);
+            setClosingModal(false);
+            setEpisodeCount(0);
+        }, 300);
+    };
 
     return (
         <div className='body'>
@@ -75,10 +95,8 @@ const CharacterList = () => {
                                 <p><IoMdPlanet className='character-icons'/> {character.location.name}</p>
                             </div>
                         </div>
-                        <button className='more-info'>
-                            <Link to={`/character/${character.id}`} className="character-link">
-                                <IoMdInformationCircleOutline /> Saiba Mais
-                            </Link>
+                        <button className='more-info' onClick={() => openModal(character)}>
+                            <IoMdInformationCircleOutline /> Saiba Mais
                         </button>
                     </li>
                 ))}
@@ -92,6 +110,26 @@ const CharacterList = () => {
                     Próxima
                 </button>
             </div>
+
+            {showModal && (
+                <div className={`modal ${showModal ? 'show' : ''}`}>
+                    <div className={`modal-content ${closingModal ? 'zoom-out' : ''}`}>
+                        <span className='close' onClick={closeModal}>&times;</span>
+                        {selectedCharacter && (
+                            <div className='modal-info'>
+                                <img src={selectedCharacter.image} alt={selectedCharacter.name} width="200" height="200" className='image-modal'/>
+                                <h2>{selectedCharacter.name}</h2>
+                                <hr className='linha-modal'></hr>
+                                <p><IoIosPulse className='character-icons'/> {selectedCharacter.status}</p>
+                                <p><RiAliensLine className='character-icons'/> {selectedCharacter.species}</p>
+                                <p><IoMdPlanet className='character-icons'/> {selectedCharacter.location.name}</p>
+                                <p><BsGenderAmbiguous className='character-icons'/> {selectedCharacter.gender}</p>
+                                <p><BsGenderAmbiguous className='character-icons'/> {episodeCount}</p>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

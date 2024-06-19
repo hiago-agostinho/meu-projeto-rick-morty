@@ -152,3 +152,91 @@ input.input {
     background-color: #fff;
     color: #11B0C8;
 }
+
+/* Modal */
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #1E1E20;
+    border: 1px solid #3b3b3e;
+    box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+
+    text-align: center;
+    animation: zoomIn 0.5s ease;
+}
+
+.modal-content.zoom-out {
+    animation: zoomOut 0.3s ease;
+}
+
+.image-modal {
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.linha-modal {
+    border: none;
+    border-top: 2px solid #11B0C8;
+    margin: 10px 0;
+    margin-left: 25px;
+    width: 90%;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #11B0C8;
+    text-decoration: none;
+    cursor: pointer;
+}
