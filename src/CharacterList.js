@@ -109,7 +109,7 @@ const CharacterList = () => {
                 <div className="footer-left">
                     <button className="home-button-list">
                         <Link to="/categories" className="home-link-character">
-                            <FaArrowLeft /> Voltar
+                            <FaArrowLeft className='arrow-left'/> Voltar
                         </Link>
                     </button>
                 </div>

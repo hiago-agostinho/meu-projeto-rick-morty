@@ -71,3 +71,7 @@ button:disabled {
   text-decoration: none;
   color: inherit;
 }
+
+.arrow-left {
+  margin-bottom: -3px;
+}

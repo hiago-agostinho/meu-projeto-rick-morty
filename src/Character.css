@@ -195,7 +195,12 @@ input.input {
 
 .home-link-character {
     color: #000;
+    transition: .4s;
     text-decoration: none;
+}
+
+.home-link-character:hover {
+    color: #11B0C8;
 }
 
 /* Modal */
