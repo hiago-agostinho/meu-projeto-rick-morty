@@ -5,6 +5,8 @@ import { IoMdPlanet } from "react-icons/io";
 import { IoIosPulse } from "react-icons/io";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { BsGenderAmbiguous } from "react-icons/bs";
+import { PiTelevisionSimple } from "react-icons/pi";
+import { LuAtom } from "react-icons/lu";
 import './Character.css';
 
 const CharacterList = () => {
@@ -53,7 +55,7 @@ const CharacterList = () => {
             setEpisodeCount(0);
         }, 300);
     };
-
+    console.log(selectedCharacter);
     return (
         <div className='body'>
             <div className='personagem'>
@@ -116,15 +118,18 @@ const CharacterList = () => {
                     <div className={`modal-content ${closingModal ? 'zoom-out' : ''}`}>
                         <span className='close' onClick={closeModal}>&times;</span>
                         {selectedCharacter && (
-                            <div className='modal-info'>
+                            <div>
                                 <img src={selectedCharacter.image} alt={selectedCharacter.name} width="200" height="200" className='image-modal'/>
-                                <h2>{selectedCharacter.name}</h2>
-                                <hr className='linha-modal'></hr>
-                                <p><IoIosPulse className='character-icons'/> {selectedCharacter.status}</p>
-                                <p><RiAliensLine className='character-icons'/> {selectedCharacter.species}</p>
-                                <p><IoMdPlanet className='character-icons'/> {selectedCharacter.location.name}</p>
-                                <p><BsGenderAmbiguous className='character-icons'/> {selectedCharacter.gender}</p>
-                                <p><BsGenderAmbiguous className='character-icons'/> {episodeCount}</p>
+                                <div className='modal-info'>
+                                    <h2 className='name-character-modal'>{selectedCharacter.name}</h2>
+                                    <hr className='linha-modal'></hr>
+                                    <p className='text-modal'><IoIosPulse className='character-icons'/> {selectedCharacter.status}</p>
+                                    <p className='text-modal'><RiAliensLine className='character-icons'/> {selectedCharacter.species}</p>
+                                    <p className='text-modal'><IoMdPlanet className='character-icons'/> {selectedCharacter.location.name}</p>
+                                    <p className='text-modal'><BsGenderAmbiguous className='character-icons'/> {selectedCharacter.gender}</p>
+                                    <p className='text-modal'><PiTelevisionSimple className='character-icons'/> {episodeCount}</p>
+                                    <p className='text-modal'><LuAtom  className='character-icons'/> {selectedCharacter.origin.name}</p>
+                                </div>
                             </div>
                         )}
                     </div>

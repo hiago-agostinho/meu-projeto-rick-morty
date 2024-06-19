@@ -26,7 +26,8 @@ input.input {
     border: 2px solid #3b3b3e;
     background: #3b3b3e;
     color: #fff;
-    margin: 10px 0;
+    margin: 10px 5;
+    margin-right: 20px;
     padding: 8px;
     width: 18%;
     height: 43px;
@@ -189,6 +190,10 @@ input.input {
     transition: opacity 0.5s ease;
 }
 
+.modal .character-icons {
+    margin-top: 5px;
+}
+
 .modal.show {
     display: flex;
     opacity: 1;
@@ -202,9 +207,9 @@ input.input {
 
     padding: 20px;
     width: 80%;
-    max-width: 400px;
+    height: 41%;
+    max-width: 590px;
 
-    text-align: center;
     animation: zoomIn 0.5s ease;
 }
 
@@ -213,16 +218,31 @@ input.input {
 }
 
 .image-modal {
-    margin-left: 20px;
+    display: flex;
+    align-items: flex-start;
+    margin-left: 5px;
     border-radius: 20px;
+}
+
+.modal-info {
+    margin-top: -200px;
+    margin-left: 220px;
+}
+
+.text-modal {
+    text-align: left;
+    text-wrap: nowrap;
+}
+
+.name-character-modal {
+    text-wrap: nowrap;
 }
 
 .linha-modal {
     border: none;
     border-top: 2px solid #11B0C8;
     margin: 10px 0;
-    margin-left: 25px;
-    width: 90%;
+    width: 100%;
 }
 
 .close {
