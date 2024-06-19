@@ -251,7 +251,7 @@ input.input {
     padding: 20px;
     width: 80%;
     height: 41%;
-    max-width: 590px;
+    max-width: 620px;
 
     animation: zoomIn 0.5s ease;
 }
