@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import { RiAliensLine } from "react-icons/ri";
 import { IoMdPlanet } from "react-icons/io";
 import { IoIosPulse } from "react-icons/io";
@@ -7,6 +8,7 @@ import { IoMdInformationCircleOutline } from "react-icons/io";
 import { BsGenderAmbiguous } from "react-icons/bs";
 import { PiTelevisionSimple } from "react-icons/pi";
 import { LuAtom } from "react-icons/lu";
+import { FaArrowLeft } from 'react-icons/fa';
 import './Character.css';
 
 const CharacterList = () => {
@@ -55,7 +57,7 @@ const CharacterList = () => {
             setEpisodeCount(0);
         }, 300);
     };
-    console.log(selectedCharacter);
+
     return (
         <div className='body'>
             <div className='personagem'>
@@ -103,16 +105,24 @@ const CharacterList = () => {
                     </li>
                 ))}
             </ul>
-            <div>
-                <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-                    Anterior
-                </button>
-                <span> Página {page} de {totalPages} </span>
-                <button onClick={() => setPage(page + 1)} disabled={page === totalPages}>
-                    Próxima
-                </button>
+            <div className="footer">
+                <div className="footer-left">
+                    <button className="home-button-list">
+                        <Link to="/categories" className="home-link-character">
+                            <FaArrowLeft /> Voltar
+                        </Link>
+                    </button>
+                </div>
+                <div className="pagination">
+                    <button onClick={() => setPage(page - 1)} disabled={page === 1}>
+                        Anterior
+                    </button>
+                    <span> Página {page} de {totalPages} </span>
+                    <button onClick={() => setPage(page + 1)} disabled={page === totalPages}>
+                        Próxima
+                    </button>
+                </div>
             </div>
-
             {showModal && (
                 <div className={`modal ${showModal ? 'show' : ''}`}>
                     <div className={`modal-content ${closingModal ? 'zoom-out' : ''}`}>
@@ -128,7 +138,7 @@ const CharacterList = () => {
                                     <p className='text-modal'><IoMdPlanet className='character-icons'/> {selectedCharacter.location.name}</p>
                                     <p className='text-modal'><BsGenderAmbiguous className='character-icons'/> {selectedCharacter.gender}</p>
                                     <p className='text-modal'><PiTelevisionSimple className='character-icons'/> {episodeCount}</p>
-                                    <p className='text-modal'><LuAtom  className='character-icons'/> {selectedCharacter.origin.name}</p>
+                                    <p className='text-modal'><LuAtom className='character-icons'/> {selectedCharacter.origin.name}</p>
                                 </div>
                             </div>
                         )}
