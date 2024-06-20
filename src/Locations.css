@@ -1,0 +1,84 @@
+.locations {
+    background-color: #1E1E20;
+    padding: 20px;
+}
+
+.title-locations {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.locations-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.location-card {
+    background-color: #3b3b3e;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: calc(33% - 20px);
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.location-card:hover {
+    background-color: #11B0C8;
+    transform: scale(1.1);
+}
+
+.location-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.location-card p {
+    margin: 10px 0;
+}
+
+.linha-locations {
+    border: none;
+    border-top: 2px solid #11B0C8;
+    margin: 10px 0;
+    width: 100%;
+    transition: .4s;
+}
+
+.location-card:hover .linha-locations {
+    border-top: 2px solid #fff;
+}
+
+.home-button-locations {
+    display: flex;
+    align-items: flex-start;
+    transition: .4s;
+    background-color: #11B0C8;
+    border: none;
+}
+
+.home-button-locations:hover {
+    border: none;
+    background-color: #fff;
+}
+
+.home-link-locations {
+    color: black;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.home-link-locations:hover {
+    color: #11B0C8;
+    text-decoration: none;
+}
+
+.character-icons-locations {
+    color: #11B0C8;
+    transition: color 0.2s ease;
+}
+
+.location-card:hover .character-icons-locations {
+    color: #fff;
+}

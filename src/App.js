@@ -5,6 +5,7 @@ import Home from './Home';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Categories from './Categories';
+import Locations from './Locations';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
+          <Route path="/locations" element={<Locations />} />
         </Routes>
       </div>
     </Router>
