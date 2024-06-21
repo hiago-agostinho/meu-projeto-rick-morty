@@ -5,6 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { GiGalaxy } from "react-icons/gi";
 import { FiType } from "react-icons/fi";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import { IoMdPerson } from "react-icons/io";
 import './Locations.css';
 
 const Locations = () => {
@@ -65,7 +66,7 @@ const Locations = () => {
                         <p><FiType className='character-icons-locations'/> {location.type}</p>
                         <p><GiGalaxy className='character-icons-locations'/> {location.dimension}</p>
                         <button className='more-info-locations' onClick={() => openModal(location)}>
-                            <IoMdInformationCircleOutline className='character-icons'/> Saiba Mais
+                            <IoMdInformationCircleOutline /> Saiba Mais
                         </button>
                     </div>
                 ))}
@@ -73,20 +74,19 @@ const Locations = () => {
             {showModal && (
                 <div className={`modal-locations ${closingModal ? 'closing' : ''}`}>
                     <div className="modal-content-locations">
-                        <h2>{selectedLocation.name}</h2>
-                        <p><FiType /> {selectedLocation.type}</p>
-                        <p><GiGalaxy /> {selectedLocation.dimension}</p>
-                        <h3>Residents</h3>
-                        <ul>
+                        <span className='close' onClick={closeModal}>&times;</span>
+                        <h2>Residents</h2>
+                        <hr className='linha-modal'></hr>
+                        <ul className='info-modal-locations'>
                             {residents.length > 0 ? (
                                 residents.map(resident => (
-                                    <li key={resident.id}>{resident.name}</li>
+                                    <p key={resident.id}> <IoMdPerson className='character-icons-locations'/> {resident.name}</p>
                                 ))
                             ) : (
                                 <p>No residents found</p>
                             )}
                         </ul>
-                        <button className="close-modal-locations" onClick={closeModal}>Fechar</button>
+                        {/* <button className="close-modal-locations" onClick={closeModal}>Fechar</button> */}
                     </div>
                 </div>
             )}
