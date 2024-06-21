@@ -5,7 +5,7 @@ import { FaArrowLeft } from 'react-icons/fa';
 import { GiGalaxy } from "react-icons/gi";
 import { FiType } from "react-icons/fi";
 import { IoMdInformationCircleOutline } from "react-icons/io";
-import { IoMdPerson } from "react-icons/io";
+import { IoIosPulse } from "react-icons/io";
 import './Locations.css';
 
 const Locations = () => {
@@ -53,7 +53,7 @@ const Locations = () => {
             setResidents([]);
         }, 300);
     };
-
+    console.log(residents);
     return (
         <div className="locations">
             <h1 className='title-locations'>Locais</h1>
@@ -75,18 +75,23 @@ const Locations = () => {
                 <div className={`modal-locations ${closingModal ? 'closing' : ''}`}>
                     <div className="modal-content-locations">
                         <span className='close' onClick={closeModal}>&times;</span>
-                        <h2>Residents</h2>
+                        <h2>Residentes</h2>
                         <hr className='linha-modal'></hr>
-                        <ul className='info-modal-locations'>
+                        <div className='info-modal-locations'>
                             {residents.length > 0 ? (
                                 residents.map(resident => (
-                                    <p key={resident.id}> <IoMdPerson className='character-icons-locations'/> {resident.name}</p>
+                                    <div key={resident.id} className='resident-card'>
+                                        <img src={resident.image} alt={resident.name} />
+                                        <div className='resident-info'>
+                                            <p>{resident.name}</p>
+                                            <p><IoIosPulse className='character-icons'/> {resident.status}</p>
+                                        </div>
+                                    </div>
                                 ))
                             ) : (
                                 <p>No residents found</p>
                             )}
-                        </ul>
-                        {/* <button className="close-modal-locations" onClick={closeModal}>Fechar</button> */}
+                        </div>
                     </div>
                 </div>
             )}
