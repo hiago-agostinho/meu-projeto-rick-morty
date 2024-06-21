@@ -42,10 +42,14 @@ const Locations = () => {
         setSelectedLocation(location);
         fetchResidents(location);
         setShowModal(true);
+        setTimeout(() => {
+            document.querySelector('.modal-locations').classList.add('opening');
+        }, 100);
     };
 
     const closeModal = () => {
         setClosingModal(true);
+        document.querySelector('.modal-locations').classList.remove('opening');
         setTimeout(() => {
             setShowModal(false);
             setSelectedLocation(null);
@@ -53,7 +57,7 @@ const Locations = () => {
             setResidents([]);
         }, 300);
     };
-    console.log(residents);
+
     return (
         <div className="locations">
             <h1 className='title-locations'>Locais</h1>
