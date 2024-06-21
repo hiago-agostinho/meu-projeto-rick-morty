@@ -125,7 +125,6 @@
 }
 
 /* Modal */
-
 .modal-locations {
     position: fixed;
     top: 0;
@@ -138,6 +137,7 @@
     justify-content: center;
     opacity: 1;
     transition: opacity 0.3s ease;
+    overflow: hidden;
 }
 
 .modal-locations.closing {
@@ -152,6 +152,8 @@
     text-align: center;
     width: 90%;
     max-width: 500px;
+    max-height: 80%;
+    overflow-y: auto;
 }
 
 .modal-content-locations h2 {
