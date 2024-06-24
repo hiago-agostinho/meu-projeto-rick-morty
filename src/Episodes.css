@@ -27,9 +27,8 @@
     text-decoration: none;
 }
 
-.footer-left {
-    position: relative;
-    bottom: 60px;
+.footer-left-episodes {
+    margin-top: -60px;
     left: 20px;
 }
 

@@ -101,7 +101,7 @@ const Episodes = () => {
                 </div>
             )}
             <Pagination totalPages={totalPages} currentPage={page} onPageChange={handlePageChange} />
-            <div className="footer-left">
+            <div className="footer-left-episodes">
                 <button className="home-button-episodes">
                     <Link to="/categories" className="home-link-episodes">
                         <FaArrowLeft className='arrow-left'/> Voltar
