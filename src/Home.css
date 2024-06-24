@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
+/* Estilos padrão para dimensões maiores (como de computadores) */
 .home {
     background-color: black;
 }
@@ -13,30 +14,23 @@
     position: absolute;
     left: 60px;
     top: 480px;
-
     font-family: 'Inter', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    
-    border-radius:10px;
-    padding-left:15px;
-    padding-right:15px;
-    padding-top:10px;
-    padding-bottom:10px;
-    
-    color:#000000;
-    background-color:#11B0C8;
-
-    outline:none;
-    border:none;
-    cursor:pointer;
-    display:inline-block;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #000000;
+    background-color: #11B0C8;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
     text-decoration: none;
     transition: .4s;
 }
 
 .home button:hover {
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .ricky {
@@ -81,4 +75,50 @@
 .home-button {
     color: rgb(0, 0, 0);
     text-decoration: none;
+}
+
+/* Media Query para telas menores, como celulares */
+@media (max-width: 767px) {
+    .home {
+        background-color: black;
+    }
+
+    .home button {
+        position: static;
+        margin-top: 20px;
+        left: auto;
+        width: 80%;
+    }
+
+    .home button:hover {
+        background-color: #fff;
+    }
+
+    .ricky {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .logo {
+        width: 50%;
+        position: static;
+        margin: 20px auto;
+    }
+
+    .slogan, .slogan2 {
+        margin-left: 45px;
+        margin-top: 350px;
+        font-size: 20pt;
+        text-align: center;
+    }
+
+    .highlight {
+        font-size: 20pt;
+    }
+
+    .wubba {
+        position: static;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 }
