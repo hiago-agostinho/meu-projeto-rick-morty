@@ -1,0 +1,152 @@
+.episodes {
+    background-color: #1E1E20;
+    padding: 20px;
+}
+
+.title-episodes {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.episode-card {
+    background-color: #3b3b3e;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.2), 0 6px 5px 0 rgba(0,0,0,0.19);
+    border-radius: 8px;
+    padding: 16px;
+    margin: 10px;
+    width: calc(33% - 20px);
+    overflow: hidden;
+    transition: transform 0.5s ease;
+}
+
+.episode-card:hover {
+    background-color: #11B0C8;
+    transform: scale(1.1);
+}
+
+.episode-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.episode-card p {
+    margin: 10px 0;
+}
+
+.more-info-episodes {
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin-left: 20px;
+    align-items: center;
+    text-wrap: nowrap;
+    color: #fff;
+    background-color: #11B0C8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.more-info-episodes svg {
+    vertical-align: middle;
+}
+
+.episode-card:hover .more-info-episodes {
+    background-color: #fff;
+    color: #11B0C8;
+}
+
+.character-icons-episodes {
+    color: #11B0C8;
+    transition: color 0.2s ease;
+}
+
+.episode-card:hover .character-icons-episodes {
+    color: #fff;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    overflow: hidden;
+}
+
+.modal-overlay.opening {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-content-episodes {
+    background: #1E1E20;
+    border: 1px solid #3b3b3e;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80%;
+    overflow-y: auto;
+}
+
+.info-modal-episodes {
+    text-align: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.character-card {
+    display: flex;
+    align-items: center;
+    background-color: #3b3b3e;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.character-card:hover {
+    background-color: #11B0C8;
+}
+
+.character-card img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.character-card .character-info {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    justify-content: center;
+}
+
+.character-card p {
+    margin: 0;
+}
+
+.character-info p {
+    text-align: left;
+}

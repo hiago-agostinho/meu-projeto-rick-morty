@@ -6,6 +6,7 @@ import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 import Categories from './Categories';
 import Locations from './Locations';
+import Episodes from './Episodes';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/characters" element={<CharacterList />} />
           <Route path="/character/:id" element={<CharacterDetail />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/episodes" element={<Episodes />} />
         </Routes>
       </div>
     </Router>
