@@ -3,6 +3,36 @@
     padding: 20px;
 }
 
+.home-button-episodes {
+    display: flex;
+    align-items: flex-start;
+    transition: .4s;
+    background-color: #11B0C8;
+    border: none;
+}
+
+.home-button-episodes:hover {
+    border: none;
+    background-color: #fff;
+}
+
+.home-link-episodes {
+    color: black;
+    text-decoration: none;
+    transition: .4s;
+}
+
+.home-link-episodes:hover {
+    color: #11B0C8;
+    text-decoration: none;
+}
+
+.footer-left {
+    position: relative;
+    bottom: 60px;
+    left: 20px;
+}
+
 .title-episodes {
     color: #fff;
     margin-bottom: 20px;

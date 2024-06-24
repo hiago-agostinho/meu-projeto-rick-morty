@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { IoMdInformationCircleOutline, IoIosPulse } from 'react-icons/io';
 import { CiCalendarDate } from "react-icons/ci";
 import { PiTelevisionSimple } from "react-icons/pi";
+import { FaArrowLeft } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import './Episodes.css';
 
 const Episodes = () => {
@@ -9,13 +11,22 @@ const Episodes = () => {
     const [selectedEpisode, setSelectedEpisode] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [characters, setCharacters] = useState([]);
+    const [page, setPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
 
     useEffect(() => {
-        fetch('https://rickandmortyapi.com/api/episode')
+        fetchEpisodes();
+    }, [page]);
+
+    const fetchEpisodes = () => {
+        fetch(`https://rickandmortyapi.com/api/episode?page=${page}`)
             .then(response => response.json())
-            .then(data => setEpisodes(data.results))
+            .then(data => {
+                setEpisodes(data.results);
+                setTotalPages(data.info.pages);
+            })
             .catch(error => console.error('Error fetching episodes:', error));
-    }, []);
+    };
 
     const fetchCharacters = async (episode) => {
         const characterPromises = episode.characters.map(url =>
@@ -41,6 +52,10 @@ const Episodes = () => {
             setSelectedEpisode(null);
             setCharacters([]);
         }, 300);
+    };
+
+    const handlePageChange = (pageNumber) => {
+        setPage(pageNumber);
     };
 
     return (
@@ -84,6 +99,30 @@ const Episodes = () => {
                     </div>
                 </div>
             )}
+            <Pagination totalPages={totalPages} currentPage={page} onPageChange={handlePageChange} />
+            <div className="footer-left">
+                <button className="home-button-episodes">
+                    <Link to="/categories" className="home-link-episodes">
+                        <FaArrowLeft className='arrow-left'/> Voltar
+                    </Link>
+                </button>
+            </div>
+        </div>
+    );
+};
+
+const Pagination = ({ totalPages, currentPage, onPageChange }) => {
+    if (totalPages === 1) return null;
+
+    return (
+        <div className="pagination">
+            <button onClick={() => onPageChange(currentPage - 1)} disabled={currentPage === 1}>
+                Anterior
+            </button>
+            <span> Página {currentPage} de {totalPages} </span>
+            <button onClick={() => onPageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                Próxima
+            </button>
         </div>
     );
 };
