@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IoMdInformationCircleOutline, IoIosPulse } from 'react-icons/io';
-import { CiCalendarDate } from "react-icons/ci";
 import { PiTelevisionSimple } from "react-icons/pi";
+import { CiCalendarDate } from "react-icons/ci";
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import './Episodes.css';
@@ -11,6 +11,7 @@ const Episodes = () => {
     const [selectedEpisode, setSelectedEpisode] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [characters, setCharacters] = useState([]);
+    const [closingModal, setClosingModal] = useState(false);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
 
@@ -41,18 +42,18 @@ const Episodes = () => {
         fetchCharacters(episode);
         setShowModal(true);
         setTimeout(() => {
-            document.querySelector('.modal-overlay').classList.add('opening');
+            document.querySelector('.modal-episodes').classList.add('opening');
         }, 100);
     };
-
+    
     const closeModal = () => {
-        document.querySelector('.modal-overlay').classList.remove('opening');
+        document.querySelector('.modal-episodes').classList.remove('opening');
         setTimeout(() => {
             setShowModal(false);
             setSelectedEpisode(null);
             setCharacters([]);
         }, 300);
-    };
+    };    
 
     const handlePageChange = (pageNumber) => {
         setPage(pageNumber);
@@ -76,7 +77,7 @@ const Episodes = () => {
                 ))}
             </div>
             {showModal && (
-                <div className="modal-overlay opening">
+                <div className={`modal-episodes ${closingModal ? 'closing' : ''}`}>
                     <div className="modal-content-episodes">
                         <span className='close' onClick={closeModal}>&times;</span>
                         <h2>Personagens</h2>
